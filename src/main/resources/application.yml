@@ -1,0 +1,15 @@
+# Spring properties
+spring:
+  application:
+     name: usermanagement-service  # Service registers under this name
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path=/error
+# HTTP Server
+server:
+  port: 8107  # HTTP (Tomcat) port
+  contextPath: /api
+#properties.location: /appdata 
