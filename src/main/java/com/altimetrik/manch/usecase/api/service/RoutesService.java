@@ -1,8 +1,11 @@
 package com.altimetrik.manch.usecase.api.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import com.altimetrik.manch.usecase.api.bean.RoutesBean;
+import com.altimetrik.manch.usecase.models.ManchRoutes;
 
 /**
  * 
@@ -12,7 +15,7 @@ import com.altimetrik.manch.usecase.api.bean.RoutesBean;
 @Transactional
 public interface RoutesService {
 
-	RoutesBean getRoutes();
+	List<ManchRoutes> getRoutes();
 	
 
 }
