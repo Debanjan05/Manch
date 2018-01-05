@@ -11,4 +11,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeDetails,Long>{
 
 	EmployeeDetails save(EmployeeRequest employeeRequest);
 
+	EmployeeDetails findAllByEmpEmailId(String email);
+
 }

@@ -14,6 +14,8 @@ public class EmployeeDetails {
 	@Column(name="employee_details_id")
 	private Long empId;
 	
+	@Column(name="employee_name")
+	private String  employeeName;
 	@Column(name="emp_manager")
 	private String empManager;
 
@@ -94,6 +96,16 @@ public class EmployeeDetails {
 				+ ", empAccount=" + empAccount + ", empEmailId=" + empEmailId + ", joinedDate=" + joinedDate
 				+ ", empShift=" + empShift + "]";
 	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	
 	
 	
 }

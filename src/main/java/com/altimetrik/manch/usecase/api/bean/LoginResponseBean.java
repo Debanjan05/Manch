@@ -9,31 +9,33 @@ package com.altimetrik.manch.usecase.api.bean;
  */
 public class LoginResponseBean {
 	private ErrorBean errors;
-	private LoginRequest loginDetails;
+	private String email;
+	private String name;
 	private String successMessage;
-
+	public ErrorBean getErrors() {
+		return errors;
+	}
+	public void setErrors(ErrorBean errors) {
+		this.errors = errors;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getSuccessMessage() {
 		return successMessage;
 	}
-
 	public void setSuccessMessage(String successMessage) {
 		this.successMessage = successMessage;
 	}
 
-	public LoginRequest getLoginDetails() {
-		return loginDetails;
-	}
-
-	public void setLoginDetails(LoginRequest loginDetails) {
-		this.loginDetails = loginDetails;
-	}
-
-	public ErrorBean getErrors() {
-		return errors;
-	}
-
-	public void setErrors(ErrorBean errors) {
-		this.errors = errors;
-	}
-
+	
 }

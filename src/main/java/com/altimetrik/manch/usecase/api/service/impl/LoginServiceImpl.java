@@ -11,7 +11,9 @@ import com.altimetrik.manch.usecase.api.bean.ErrorBean;
 import com.altimetrik.manch.usecase.api.bean.LoginRequest;
 import com.altimetrik.manch.usecase.api.bean.LoginResponseBean;
 import com.altimetrik.manch.usecase.api.service.LoginService;
+import com.altimetrik.manch.usecase.models.EmployeeDetails;
 import com.altimetrik.manch.usecase.models.LoginDetails;
+import com.altimetrik.manch.usecase.models.repository.EmployeeRepository;
 import com.altimetrik.manch.usecase.models.repository.LoginDetailsRepository;
 
 /**
@@ -22,15 +24,19 @@ import com.altimetrik.manch.usecase.models.repository.LoginDetailsRepository;
 public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private LoginDetailsRepository loginDetailsRepository;
+	@Autowired
+	private EmployeeRepository empRepo;
 	@Override
 	public LoginResponseBean login(LoginRequest loginRequest) {
 		LoginResponseBean responseBean=new LoginResponseBean();
-		if(loginRequest!=null)
+		EmployeeDetails employeeDetails=empRepo.findAllByEmpEmailId(loginRequest.getEmail());
+		if(loginRequest!=null && employeeDetails!=null)
 		{
 			LoginDetails dbDetails=loginDetailsRepository.findAllByEmail(loginRequest.getEmail());
 			if(dbDetails.getPassword().equals(loginRequest.getPassword())){
 				responseBean.setSuccessMessage("Successfull login!!");
-				responseBean.setLoginDetails(loginRequest);
+				responseBean.setEmail(employeeDetails.getEmpEmailId());
+				responseBean.setName(employeeDetails.getEmployeeName());
 			}
 			else{
 				ErrorBean errorBean=new ErrorBean();
