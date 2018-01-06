@@ -13,7 +13,7 @@ public class ScheduleCabBean {
 	private String email;
 	private Long toRouteId;
 	private Long fromRouteId;
-	private Date travelDate;
+	private Long travelDate;
 	public Long getToRouteId() {
 		return toRouteId;
 	}
@@ -26,10 +26,11 @@ public class ScheduleCabBean {
 	public void setFromRouteId(Long fromRouteId) {
 		this.fromRouteId = fromRouteId;
 	}
-	public Date getTravelDate() {
+	
+	public Long getTravelDate() {
 		return travelDate;
 	}
-	public void setTravelDate(Date travelDate) {
+	public void setTravelDate(Long travelDate) {
 		this.travelDate = travelDate;
 	}
 	public String getEmail() {

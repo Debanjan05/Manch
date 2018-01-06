@@ -6,6 +6,7 @@ package com.altimetrik.manch.usecase.api.service;
 import javax.transaction.Transactional;
 
 import com.altimetrik.manch.usecase.api.bean.ScheduleCabBean;
+import com.altimetrik.manch.usecase.api.bean.ScheduleResponse;
 
 /**
  * @author sghosh
@@ -14,7 +15,7 @@ import com.altimetrik.manch.usecase.api.bean.ScheduleCabBean;
 @Transactional
 public interface ScheduleCabService {
 
-	String scheduleCab(ScheduleCabBean scheduleRequest);
+	ScheduleResponse scheduleCab(ScheduleCabBean scheduleRequest);
 	
 	
 	

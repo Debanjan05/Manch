@@ -27,6 +27,8 @@ public class ManchCabDetails {
 	private String cabNo;
 	@Column(name="cab_seats")
 	private Integer cabSeats;
+	@Column(name="seats_remaining")
+	private Integer seatsRemaining;
 	@Column(name="vender_contact")
 	private Long venderContact;
 	@Column(name="driver_name")
@@ -102,6 +104,12 @@ public class ManchCabDetails {
 	}
 	public void setCurrentStatus(String currentStatus) {
 		this.currentStatus = currentStatus;
+	}
+	public Integer getSeatsRemaining() {
+		return seatsRemaining;
+	}
+	public void setSeatsRemaining(Integer seatsRemaining) {
+		this.seatsRemaining = seatsRemaining;
 	}
 	
 	

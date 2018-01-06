@@ -48,7 +48,7 @@ public class WebApplication {
         executor.setCorePoolSize(2);
         executor.setMaxPoolSize(2);
         executor.setQueueCapacity(500);
-        executor.setThreadNamePrefix("Playground");
+        executor.setThreadNamePrefix("Manch");
         executor.initialize();
         return executor;
     }
