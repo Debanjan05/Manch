@@ -36,6 +36,8 @@ public class ScheduleCabServiceImpl implements ScheduleCabService {
 	private EmployeeRepository empRepo;
 	@Autowired
 	private EmployeeCabHistoryRepository employeeCabHistoryRepo;
+	@Autowired
+	private EmployeeRepository employeeRepo;
 	
 	@Override
 	public ScheduleResponse scheduleCab(ScheduleCabBean scheduleRequest) {
@@ -91,6 +93,14 @@ public class ScheduleCabServiceImpl implements ScheduleCabService {
 		}
 		
 		return returnValue;
+	}
+
+	@Override
+	public List<EmployeeCabHistory> viewEmployeeCabHistory(Integer employeeId) {
+		
+		EmployeeDetails empDetails = employeeRepo.findByemployeeId(employeeId);
+		List<EmployeeCabHistory> empCabHistoryList = employeeCabHistoryRepo.findAllByemployeeDetails(empDetails);
+		return empCabHistoryList;
 	}
 	
 
