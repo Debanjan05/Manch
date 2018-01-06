@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,11 +13,32 @@ import javax.persistence.Table;
 @Table(name="manch_employee_details")
 public class EmployeeDetails {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="employee_details_id")
-	private Long empId;
+	private Long empDetailsId;
 	
+	@Column(name="employee_id")
+	private Integer employeeId;
+	
+	public Long getEmpDetailsId() {
+		return empDetailsId;
+	}
+
+	public void setEmpDetailsId(Long empDetailsId) {
+		this.empDetailsId = empDetailsId;
+	}
+
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(Integer employeeId) {
+		this.employeeId = employeeId;
+	}
+
 	@Column(name="employee_name")
 	private String  employeeName;
+	
 	@Column(name="emp_manager")
 	private String empManager;
 
@@ -33,14 +56,6 @@ public class EmployeeDetails {
 	
 	@Column(name="emp_shift")
 	private String empShift;
-
-	public Long getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(Long empId) {
-		this.empId = empId;
-	}
 
 	public String getEmpManager() {
 		return empManager;
@@ -90,13 +105,7 @@ public class EmployeeDetails {
 		this.empShift = empShift;
 	}
 
-	@Override
-	public String toString() {
-		return "EmployeeDetails [empId=" + empId + ", empManager=" + empManager + ", empGender=" + empGender
-				+ ", empAccount=" + empAccount + ", empEmailId=" + empEmailId + ", joinedDate=" + joinedDate
-				+ ", empShift=" + empShift + "]";
-	}
-
+	
 	public String getEmployeeName() {
 		return employeeName;
 	}
@@ -105,7 +114,14 @@ public class EmployeeDetails {
 		this.employeeName = employeeName;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "EmployeeDetails [empDetailsId=" + empDetailsId + ", employeeId=" + employeeId + ", employeeName="
+				+ employeeName + ", empManager=" + empManager + ", empGender=" + empGender + ", empAccount="
+				+ empAccount + ", empEmailId=" + empEmailId + ", joinedDate=" + joinedDate + ", empShift=" + empShift
+				+ "]";
+	}
+
 	
 	
 }
